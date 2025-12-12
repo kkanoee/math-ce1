@@ -1,0 +1,323 @@
+{
+    "meta": {
+        "version": "1.0.0",
+        "description": "Badge definitions for MathCE1"
+    },
+    "badges": [
+        {
+            "id": "first_exercise",
+            "name": "Premier Pas",
+            "description": "Réussir ton premier exercice",
+            "icon": "🎯",
+            "category": "progress",
+            "criteria": {
+                "type": "totalCorrect",
+                "value": 1
+            },
+            "reward": {
+                "stars": 5
+            }
+        },
+        {
+            "id": "streak_5",
+            "name": "En feu !",
+            "description": "Faire une série de 5 bonnes réponses",
+            "icon": "🔥",
+            "category": "streak",
+            "criteria": {
+                "type": "streak",
+                "value": 5
+            },
+            "reward": {
+                "stars": 10
+            }
+        },
+        {
+            "id": "streak_10",
+            "name": "Inarrêtable",
+            "description": "Faire une série de 10 bonnes réponses",
+            "icon": "💫",
+            "category": "streak",
+            "criteria": {
+                "type": "streak",
+                "value": 10
+            },
+            "reward": {
+                "stars": 20
+            }
+        },
+        {
+            "id": "streak_20",
+            "name": "Champion",
+            "description": "Faire une série de 20 bonnes réponses",
+            "icon": "🏆",
+            "category": "streak",
+            "criteria": {
+                "type": "streak",
+                "value": 20
+            },
+            "reward": {
+                "stars": 50
+            }
+        },
+        {
+            "id": "star_10",
+            "name": "Collectionneur",
+            "description": "Gagner 10 étoiles",
+            "icon": "⭐",
+            "category": "progress",
+            "criteria": {
+                "type": "stars",
+                "value": 10
+            },
+            "reward": {
+                "stars": 5
+            }
+        },
+        {
+            "id": "star_50",
+            "name": "Super Star",
+            "description": "Gagner 50 étoiles",
+            "icon": "🌟",
+            "category": "progress",
+            "criteria": {
+                "type": "stars",
+                "value": 50
+            },
+            "reward": {
+                "stars": 10
+            }
+        },
+        {
+            "id": "star_100",
+            "name": "Légende",
+            "description": "Gagner 100 étoiles",
+            "icon": "✨",
+            "category": "progress",
+            "criteria": {
+                "type": "stars",
+                "value": 100
+            },
+            "reward": {
+                "stars": 25
+            }
+        },
+        {
+            "id": "level_up",
+            "name": "Progression",
+            "description": "Monter d'un niveau",
+            "icon": "📈",
+            "category": "mastery",
+            "criteria": {
+                "type": "maxLevel",
+                "value": 2
+            },
+            "reward": {
+                "stars": 15
+            }
+        },
+        {
+            "id": "level_5",
+            "name": "Expert",
+            "description": "Atteindre le niveau 5",
+            "icon": "🧠",
+            "category": "mastery",
+            "criteria": {
+                "type": "maxLevel",
+                "value": 5
+            },
+            "reward": {
+                "stars": 50
+            }
+        },
+        {
+            "id": "calcul_master",
+            "name": "As du Calcul",
+            "description": "Réussir 50 exercices de calcul",
+            "icon": "➕",
+            "category": "domain",
+            "criteria": {
+                "type": "domainExercises",
+                "domain": "calcul",
+                "value": 50
+            },
+            "reward": {
+                "stars": 30
+            }
+        },
+        {
+            "id": "numeration_master",
+            "name": "Expert Nombres",
+            "description": "Réussir 50 exercices de numération",
+            "icon": "🔢",
+            "category": "domain",
+            "criteria": {
+                "type": "domainExercises",
+                "domain": "numeration",
+                "value": 50
+            },
+            "reward": {
+                "stars": 30
+            }
+        },
+        {
+            "id": "geometrie_master",
+            "name": "Géomètre",
+            "description": "Réussir 50 exercices de géométrie",
+            "icon": "📐",
+            "category": "domain",
+            "criteria": {
+                "type": "domainExercises",
+                "domain": "geometrie",
+                "value": 50
+            },
+            "reward": {
+                "stars": 30
+            }
+        },
+        {
+            "id": "mesures_master",
+            "name": "Maître des Mesures",
+            "description": "Réussir 50 exercices de mesures",
+            "icon": "📏",
+            "category": "domain",
+            "criteria": {
+                "type": "domainExercises",
+                "domain": "mesures",
+                "value": 50
+            },
+            "reward": {
+                "stars": 30
+            }
+        },
+        {
+            "id": "problemes_master",
+            "name": "Résolveur",
+            "description": "Réussir 50 problèmes",
+            "icon": "🧩",
+            "category": "domain",
+            "criteria": {
+                "type": "domainExercises",
+                "domain": "problemes",
+                "value": 50
+            },
+            "reward": {
+                "stars": 30
+            }
+        },
+        {
+            "id": "daily_player",
+            "name": "Assidu",
+            "description": "Jouer 3 jours consécutifs",
+            "icon": "📅",
+            "category": "activity",
+            "criteria": {
+                "type": "consecutiveDays",
+                "value": 3
+            },
+            "reward": {
+                "stars": 15
+            }
+        },
+        {
+            "id": "weekly_player",
+            "name": "Régulier",
+            "description": "Jouer 7 jours consécutifs",
+            "icon": "🗓️",
+            "category": "activity",
+            "criteria": {
+                "type": "consecutiveDays",
+                "value": 7
+            },
+            "reward": {
+                "stars": 30
+            }
+        },
+        {
+            "id": "morning_star",
+            "name": "Lève-tôt",
+            "description": "Jouer avant 9h",
+            "icon": "🌅",
+            "category": "activity",
+            "criteria": {
+                "type": "morningPlay"
+            },
+            "reward": {
+                "stars": 5
+            }
+        },
+        {
+            "id": "perfect_session",
+            "name": "Session parfaite",
+            "description": "Finir une session sans erreur",
+            "icon": "💯",
+            "category": "achievement",
+            "criteria": {
+                "type": "perfectSession"
+            },
+            "reward": {
+                "stars": 25
+            }
+        },
+        {
+            "id": "explorer",
+            "name": "Explorateur",
+            "description": "Essayer les 5 domaines",
+            "icon": "🗺️",
+            "category": "achievement",
+            "criteria": {
+                "type": "domainsPlayed",
+                "value": 5
+            },
+            "reward": {
+                "stars": 20
+            }
+        },
+        {
+            "id": "voice_user",
+            "name": "Parleur",
+            "description": "Répondre 20 fois par la voix",
+            "icon": "🎤",
+            "category": "achievement",
+            "criteria": {
+                "type": "voiceAnswers",
+                "value": 20
+            },
+            "reward": {
+                "stars": 10
+            }
+        }
+    ],
+    "categories": [
+        {
+            "id": "progress",
+            "name": "Progression",
+            "icon": "📊"
+        },
+        {
+            "id": "streak",
+            "name": "Séries",
+            "icon": "🔥"
+        },
+        {
+            "id": "mastery",
+            "name": "Maîtrise",
+            "icon": "🎓"
+        },
+        {
+            "id": "domain",
+            "name": "Domaines",
+            "icon": "📚"
+        },
+        {
+            "id": "activity",
+            "name": "Activité",
+            "icon": "📅"
+        },
+        {
+            "id": "achievement",
+            "name": "Exploits",
+            "icon": "🏅"
+        }
+    ]
+}

@@ -1,0 +1,113 @@
+{
+    "meta": {
+        "domain": "geometrie",
+        "version": "1.0.0",
+        "description": "Geometry exercises for CE1"
+    },
+    "exercises": {
+        "recognition": [
+            {
+                "id": "geo_recog_001",
+                "type": "recognition",
+                "difficulty": 1,
+                "targetShape": "square",
+                "phase": "pictorial"
+            },
+            {
+                "id": "geo_recog_002",
+                "type": "recognition",
+                "difficulty": 1,
+                "targetShape": "circle",
+                "phase": "pictorial"
+            },
+            {
+                "id": "geo_recog_003",
+                "type": "recognition",
+                "difficulty": 1,
+                "targetShape": "triangle",
+                "phase": "pictorial"
+            },
+            {
+                "id": "geo_recog_004",
+                "type": "recognition",
+                "difficulty": 2,
+                "targetShape": "rectangle",
+                "phase": "pictorial"
+            }
+        ],
+        "countSides": [
+            {
+                "id": "geo_sides_001",
+                "type": "countSides",
+                "difficulty": 1,
+                "shape": "triangle",
+                "answer": 3
+            },
+            {
+                "id": "geo_sides_002",
+                "type": "countSides",
+                "difficulty": 1,
+                "shape": "square",
+                "answer": 4
+            },
+            {
+                "id": "geo_sides_003",
+                "type": "countSides",
+                "difficulty": 2,
+                "shape": "pentagon",
+                "answer": 5
+            },
+            {
+                "id": "geo_sides_004",
+                "type": "countSides",
+                "difficulty": 2,
+                "shape": "hexagon",
+                "answer": 6
+            }
+        ]
+    },
+    "shapes": [
+        {
+            "id": "circle",
+            "name": "cercle",
+            "sides": 0,
+            "icon": "⭕",
+            "color": "#E74C3C"
+        },
+        {
+            "id": "square",
+            "name": "carré",
+            "sides": 4,
+            "icon": "🟥",
+            "color": "#3498DB"
+        },
+        {
+            "id": "rectangle",
+            "name": "rectangle",
+            "sides": 4,
+            "icon": "🟦",
+            "color": "#2ECC71"
+        },
+        {
+            "id": "triangle",
+            "name": "triangle",
+            "sides": 3,
+            "icon": "🔺",
+            "color": "#F39C12"
+        },
+        {
+            "id": "pentagon",
+            "name": "pentagone",
+            "sides": 5,
+            "icon": "⬠",
+            "color": "#9B59B6"
+        },
+        {
+            "id": "hexagon",
+            "name": "hexagone",
+            "sides": 6,
+            "icon": "⬡",
+            "color": "#1ABC9C"
+        }
+    ]
+}

@@ -1,0 +1,95 @@
+{
+    "meta": {
+        "domain": "problemes",
+        "version": "1.0.0",
+        "description": "Word problem exercises for CE1"
+    },
+    "exercises": {
+        "addition": [
+            {
+                "id": "prob_add_001",
+                "type": "addition",
+                "difficulty": 1,
+                "a": 3,
+                "b": 4,
+                "template": "fruits",
+                "object": "pommes"
+            },
+            {
+                "id": "prob_add_002",
+                "type": "addition",
+                "difficulty": 1,
+                "a": 5,
+                "b": 3,
+                "template": "toys",
+                "object": "crayons"
+            },
+            {
+                "id": "prob_add_003",
+                "type": "addition",
+                "difficulty": 2,
+                "a": 7,
+                "b": 6,
+                "template": "animals",
+                "object": "oiseaux"
+            }
+        ],
+        "subtraction": [
+            {
+                "id": "prob_sub_001",
+                "type": "subtraction",
+                "difficulty": 1,
+                "a": 8,
+                "b": 3,
+                "template": "candies",
+                "object": "bonbons"
+            },
+            {
+                "id": "prob_sub_002",
+                "type": "subtraction",
+                "difficulty": 1,
+                "a": 10,
+                "b": 4,
+                "template": "balloons",
+                "object": "ballons"
+            },
+            {
+                "id": "prob_sub_003",
+                "type": "subtraction",
+                "difficulty": 2,
+                "a": 15,
+                "b": 7,
+                "template": "leave",
+                "object": "enfants"
+            }
+        ]
+    },
+    "templates": {
+        "addition": {
+            "fruits": "{name} a {a} {object}. {nom2} lui donne {b} {object}. Combien a-t-il de {object} maintenant ?",
+            "toys": "Il y a {a} {object} sur la table. Maman en pose {b} de plus. Combien y a-t-il de {object} sur la table ?",
+            "animals": "Au parc, {name} voit {a} {object}. Puis {b} autres {object} arrivent. Combien de {object} voit-il ?"
+        },
+        "subtraction": {
+            "candies": "{name} a {a} {object}. Il en mange {b}. Combien lui reste-t-il de {object} ?",
+            "balloons": "{name} a {a} {object}. {b} s'envolent. Combien lui reste-t-il de {object} ?",
+            "leave": "Il y a {a} enfants dans la cour. {b} enfants rentrent en classe. Combien d'enfants reste-t-il dans la cour ?"
+        }
+    },
+    "names": [
+        "Lucas",
+        "Emma",
+        "Léo",
+        "Chloé",
+        "Hugo",
+        "Jade",
+        "Arthur",
+        "Louise"
+    ],
+    "names2": [
+        "son ami",
+        "sa sœur",
+        "son frère",
+        "sa maman"
+    ]
+}

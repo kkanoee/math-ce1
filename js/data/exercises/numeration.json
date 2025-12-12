@@ -1,0 +1,199 @@
+{
+    "meta": {
+        "domain": "numeration",
+        "name": "Numération",
+        "description": "Compter, comparer, ranger les nombres",
+        "version": "1.0.0"
+    },
+    "exercises": [
+        {
+            "id": "count_001",
+            "type": "counting",
+            "difficulty": 1,
+            "cpa_phase": "concrete",
+            "question_template": "Combien y a-t-il de jetons ?",
+            "params": {
+                "count": 5
+            },
+            "answer": 5,
+            "hint": "Touche chaque jeton en comptant"
+        },
+        {
+            "id": "count_002",
+            "type": "counting",
+            "difficulty": 1,
+            "cpa_phase": "concrete",
+            "question_template": "Combien y a-t-il de cubes ?",
+            "params": {
+                "count": 8
+            },
+            "answer": 8,
+            "hint": "Compte les cubes un par un"
+        },
+        {
+            "id": "count_003",
+            "type": "counting",
+            "difficulty": 2,
+            "cpa_phase": "pictorial",
+            "question_template": "Combien y a-t-il d'étoiles ?",
+            "params": {
+                "count": 12,
+                "icon": "⭐"
+            },
+            "answer": 12,
+            "hint": "Groupe par 5 pour compter plus vite"
+        },
+        {
+            "id": "compare_001",
+            "type": "comparison",
+            "difficulty": 1,
+            "cpa_phase": "abstract",
+            "question_template": "Quel nombre est le plus grand : {a} ou {b} ?",
+            "params": {
+                "a": 7,
+                "b": 4
+            },
+            "answer": 7,
+            "hint": "Le nombre avec le plus de cubes"
+        },
+        {
+            "id": "compare_002",
+            "type": "comparison",
+            "difficulty": 2,
+            "cpa_phase": "abstract",
+            "question_template": "Quel nombre est le plus petit : {a} ou {b} ?",
+            "params": {
+                "a": 15,
+                "b": 12
+            },
+            "answer": 12,
+            "hint": "Compare les dizaines d'abord"
+        },
+        {
+            "id": "order_001",
+            "type": "ordering",
+            "difficulty": 2,
+            "cpa_phase": "abstract",
+            "question_template": "Quel nombre vient après {a} ?",
+            "params": {
+                "a": 19
+            },
+            "answer": 20,
+            "hint": "Compte : dix-neuf, puis..."
+        },
+        {
+            "id": "order_002",
+            "type": "ordering",
+            "difficulty": 2,
+            "cpa_phase": "abstract",
+            "question_template": "Quel nombre vient avant {a} ?",
+            "params": {
+                "a": 30
+            },
+            "answer": 29,
+            "hint": "Compte à rebours"
+        },
+        {
+            "id": "decompose_001",
+            "type": "decomposition",
+            "difficulty": 3,
+            "cpa_phase": "pictorial",
+            "question_template": "Combien de dizaines dans {a} ?",
+            "params": {
+                "a": 35
+            },
+            "answer": 3,
+            "hint": "Une dizaine = 10 unités"
+        },
+        {
+            "id": "decompose_002",
+            "type": "decomposition",
+            "difficulty": 3,
+            "cpa_phase": "abstract",
+            "question_template": "Combien d'unités dans {a} ?",
+            "params": {
+                "a": 47
+            },
+            "answer": 7,
+            "hint": "Les unités sont à droite"
+        },
+        {
+            "id": "count_004",
+            "type": "counting",
+            "difficulty": 3,
+            "cpa_phase": "abstract",
+            "question_template": "Compte de 5 en 5 : 10, 15, 20, ... ?",
+            "params": {
+                "start": 10,
+                "step": 5,
+                "count": 4
+            },
+            "answer": 25,
+            "hint": "Ajoute 5 à chaque fois"
+        }
+    ],
+    "generators": {
+        "counting": {
+            "description": "Génère des exercices de comptage",
+            "rules": [
+                {
+                    "difficulty": 1,
+                    "range": [
+                        1,
+                        10
+                    ]
+                },
+                {
+                    "difficulty": 2,
+                    "range": [
+                        10,
+                        20
+                    ]
+                },
+                {
+                    "difficulty": 3,
+                    "range": [
+                        20,
+                        50
+                    ]
+                },
+                {
+                    "difficulty": 4,
+                    "range": [
+                        50,
+                        100
+                    ]
+                }
+            ]
+        },
+        "comparison": {
+            "description": "Génère des comparaisons de nombres",
+            "rules": [
+                {
+                    "difficulty": 1,
+                    "range": [
+                        1,
+                        10
+                    ],
+                    "min_difference": 2
+                },
+                {
+                    "difficulty": 2,
+                    "range": [
+                        10,
+                        50
+                    ],
+                    "min_difference": 3
+                },
+                {
+                    "difficulty": 3,
+                    "range": [
+                        50,
+                        100
+                    ],
+                    "min_difference": 5
+                }
+            ]
+        }
+    }
+}

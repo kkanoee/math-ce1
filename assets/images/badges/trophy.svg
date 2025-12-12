@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Trophy cup -->
+  <path d="M30 30 L30 55 Q30 75 50 80 Q70 75 70 55 L70 30 Z" fill="#FFD700"/>
+  <rect x="40" y="75" width="20" height="10" fill="#CD853F"/>
+  <rect x="35" y="85" width="30" height="8" rx="2" fill="#CD853F"/>
+  <!-- Shine -->
+  <path d="M38 35 L38 50 Q38 60 45 65" stroke="#FFF" stroke-width="3" fill="none" opacity="0.5"/>
+  <!-- Handles -->
+  <path d="M30 35 Q15 35 15 50 Q15 60 30 60" stroke="#FFD700" stroke-width="6" fill="none"/>
+  <path d="M70 35 Q85 35 85 50 Q85 60 70 60" stroke="#FFD700" stroke-width="6" fill="none"/>
+</svg>

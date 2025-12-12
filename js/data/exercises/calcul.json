@@ -1,0 +1,216 @@
+{
+    "meta": {
+        "domain": "calcul",
+        "name": "Calcul",
+        "description": "Addition et soustraction",
+        "version": "1.0.0"
+    },
+    "exercises": [
+        {
+            "id": "add_001",
+            "type": "addition",
+            "difficulty": 1,
+            "cpa_phase": "concrete",
+            "question_template": "{a} + {b} = ?",
+            "params": {
+                "a": 2,
+                "b": 3
+            },
+            "answer": 5,
+            "hint": "Compte les cubes un par un"
+        },
+        {
+            "id": "add_002",
+            "type": "addition",
+            "difficulty": 1,
+            "cpa_phase": "concrete",
+            "question_template": "{a} + {b} = ?",
+            "params": {
+                "a": 4,
+                "b": 2
+            },
+            "answer": 6,
+            "hint": "Regroupe les cubes"
+        },
+        {
+            "id": "add_003",
+            "type": "addition",
+            "difficulty": 1,
+            "cpa_phase": "pictorial",
+            "question_template": "{a} + {b} = ?",
+            "params": {
+                "a": 3,
+                "b": 4
+            },
+            "answer": 7,
+            "hint": "Regarde le modèle en barres"
+        },
+        {
+            "id": "add_004",
+            "type": "addition",
+            "difficulty": 1,
+            "cpa_phase": "abstract",
+            "question_template": "{a} + {b} = ?",
+            "params": {
+                "a": 5,
+                "b": 3
+            },
+            "answer": 8,
+            "hint": "Commence par le plus grand nombre"
+        },
+        {
+            "id": "add_005",
+            "type": "addition",
+            "difficulty": 2,
+            "cpa_phase": "abstract",
+            "question_template": "{a} + {b} = ?",
+            "params": {
+                "a": 7,
+                "b": 5
+            },
+            "answer": 12,
+            "hint": "7 + 3 = 10, puis ajoute 2"
+        },
+        {
+            "id": "sub_001",
+            "type": "subtraction",
+            "difficulty": 1,
+            "cpa_phase": "concrete",
+            "question_template": "{a} - {b} = ?",
+            "params": {
+                "a": 5,
+                "b": 2
+            },
+            "answer": 3,
+            "hint": "Enlève les cubes rouges"
+        },
+        {
+            "id": "sub_002",
+            "type": "subtraction",
+            "difficulty": 1,
+            "cpa_phase": "pictorial",
+            "question_template": "{a} - {b} = ?",
+            "params": {
+                "a": 8,
+                "b": 3
+            },
+            "answer": 5,
+            "hint": "Regarde ce qui reste"
+        },
+        {
+            "id": "sub_003",
+            "type": "subtraction",
+            "difficulty": 2,
+            "cpa_phase": "abstract",
+            "question_template": "{a} - {b} = ?",
+            "params": {
+                "a": 10,
+                "b": 4
+            },
+            "answer": 6,
+            "hint": "Compte à rebours depuis 10"
+        },
+        {
+            "id": "add_006",
+            "type": "addition",
+            "difficulty": 2,
+            "cpa_phase": "abstract",
+            "question_template": "{a} + {b} = ?",
+            "params": {
+                "a": 9,
+                "b": 6
+            },
+            "answer": 15,
+            "hint": "9 + 1 = 10, puis ajoute 5"
+        },
+        {
+            "id": "add_007",
+            "type": "addition",
+            "difficulty": 3,
+            "cpa_phase": "abstract",
+            "question_template": "{a} + {b} = ?",
+            "params": {
+                "a": 14,
+                "b": 8
+            },
+            "answer": 22,
+            "hint": "Décompose : 14 + 6 = 20, puis + 2"
+        }
+    ],
+    "generators": {
+        "addition": {
+            "description": "Génère des additions aléatoires selon la difficulté",
+            "rules": [
+                {
+                    "difficulty": 1,
+                    "range": [
+                        1,
+                        10
+                    ],
+                    "max_result": 10
+                },
+                {
+                    "difficulty": 2,
+                    "range": [
+                        1,
+                        10
+                    ],
+                    "max_result": 20
+                },
+                {
+                    "difficulty": 3,
+                    "range": [
+                        1,
+                        20
+                    ],
+                    "max_result": 30
+                },
+                {
+                    "difficulty": 4,
+                    "range": [
+                        1,
+                        50
+                    ],
+                    "max_result": 50
+                },
+                {
+                    "difficulty": 5,
+                    "range": [
+                        1,
+                        50
+                    ],
+                    "max_result": 100
+                }
+            ]
+        },
+        "subtraction": {
+            "description": "Génère des soustractions aléatoires (résultat positif)",
+            "rules": [
+                {
+                    "difficulty": 1,
+                    "range": [
+                        1,
+                        10
+                    ],
+                    "min_result": 0
+                },
+                {
+                    "difficulty": 2,
+                    "range": [
+                        1,
+                        20
+                    ],
+                    "min_result": 0
+                },
+                {
+                    "difficulty": 3,
+                    "range": [
+                        1,
+                        30
+                    ],
+                    "min_result": 0
+                }
+            ]
+        }
+    }
+}
