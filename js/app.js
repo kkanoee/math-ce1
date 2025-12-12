@@ -164,6 +164,12 @@ class App {
             this.updateStarDisplay(child?.stars || 0);
         });
 
+        // App Title Home Navigation
+        const appTitle = document.getElementById('app-title');
+        if (appTitle) {
+            appTitle.addEventListener('click', () => this.router.navigate('home'));
+        }
+
         // Handle visibility change (pause when tab hidden)
         document.addEventListener('visibilitychange', () => {
             if (document.hidden) {

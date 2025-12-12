@@ -160,6 +160,13 @@ export class ProfilePage {
                     background: linear-gradient(135deg, rgba(74, 144, 217, 0.1), rgba(74, 144, 217, 0.05));
                 }
 
+                .profile-card.selecting {
+                    transform: scale(0.98);
+                    border-color: var(--color-success);
+                    background: var(--bg-accent);
+                    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+                }
+
                 .profile-avatar {
                     width: 60px;
                     height: 60px;
@@ -479,10 +486,14 @@ export class ProfilePage {
         if (!this.app.state.get('currentChild')) {
             this.app.storage.set('activeChildId', newChild.id);
             this.app.state.set('currentChild', newChild);
+        } else {
+            // Even if there was one, switch to the new one
+            this.app.storage.set('activeChildId', newChild.id);
+            this.app.state.set('currentChild', newChild);
         }
 
-        // Re-render page
-        this.app.router.render();
+        // Navigate to home with welcome param
+        this.app.router.navigate('home/welcome');
     }
 
     /**
@@ -493,11 +504,21 @@ export class ProfilePage {
         const child = children.find(c => c.id === profileId);
 
         if (child) {
-            this.app.storage.set('activeChildId', child.id);
-            this.app.state.set('currentChild', child);
+            // Visual feedback
+            const card = document.querySelector(`.profile-card[data-profile-id="${profileId}"]`);
+            if (card) {
+                card.classList.add('selecting');
+                this.app.audio?.playClick();
+            }
 
-            // Re-render to show active state
-            this.app.router.render();
+            // Wait for animation then switch and navigate
+            setTimeout(() => {
+                this.app.storage.set('activeChildId', child.id);
+                this.app.state.set('currentChild', child);
+
+                // Navigate to home
+                this.app.router.navigate('home');
+            }, 500);
         }
     }
 

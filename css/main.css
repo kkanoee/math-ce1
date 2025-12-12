@@ -198,6 +198,7 @@ body {
   font-weight: var(--font-weight-extra);
   color: var(--color-primary);
   text-align: center;
+  cursor: pointer;
 }
 
 .app-main {
