@@ -632,21 +632,11 @@ export class ProfilePage {
                 // Update the profile count
                 const limitInfo = document.querySelector('.profiles-limit-info');
                 if (limitInfo) {
-                    limitInfo.textContent = `${filtered.length} / ${this.app.storage.get('children')?.length <= 5 ? 5 : filtered.length} profils`;
+                    limitInfo.textContent = `${filtered.length} / ${CONFIG.LIMITS.MAX_CHILDREN} profils`;
                 }
 
-                // If no profiles left, show empty state
-                if (filtered.length === 0) {
-                    const list = document.getElementById('profiles-list');
-                    if (list) {
-                        list.innerHTML = `
-                            <div class="empty-profiles">
-                                <span class="empty-icon">👶</span>
-                                <p>Aucun profil créé</p>
-                            </div>
-                        `;
-                    }
-                }
+                // Re-render the list to update "Active" status on other cards
+                this.app.router.render();
             }, 400);
         } else {
             // Fallback: just update storage and re-render
