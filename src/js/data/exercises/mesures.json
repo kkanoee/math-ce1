@@ -1,0 +1,129 @@
+{
+    "meta": {
+        "domain": "mesures",
+        "version": "1.0.0",
+        "description": "Measurement exercises for CE1"
+    },
+    "exercises": {
+        "length": [
+            {
+                "id": "mes_len_001",
+                "type": "length",
+                "difficulty": 1,
+                "length": 5,
+                "unit": "cm"
+            },
+            {
+                "id": "mes_len_002",
+                "type": "length",
+                "difficulty": 1,
+                "length": 10,
+                "unit": "cm"
+            },
+            {
+                "id": "mes_len_003",
+                "type": "length",
+                "difficulty": 2,
+                "length": 15,
+                "unit": "cm"
+            }
+        ],
+        "time": [
+            {
+                "id": "mes_time_001",
+                "type": "time",
+                "difficulty": 1,
+                "hours": 3,
+                "minutes": 0
+            },
+            {
+                "id": "mes_time_002",
+                "type": "time",
+                "difficulty": 1,
+                "hours": 7,
+                "minutes": 0
+            },
+            {
+                "id": "mes_time_003",
+                "type": "time",
+                "difficulty": 2,
+                "hours": 4,
+                "minutes": 30
+            }
+        ],
+        "money": [
+            {
+                "id": "mes_money_001",
+                "type": "money",
+                "difficulty": 1,
+                "coins": [
+                    1,
+                    2,
+                    1
+                ],
+                "total": 4
+            },
+            {
+                "id": "mes_money_002",
+                "type": "money",
+                "difficulty": 1,
+                "coins": [
+                    2,
+                    2,
+                    1
+                ],
+                "total": 5
+            },
+            {
+                "id": "mes_money_003",
+                "type": "money",
+                "difficulty": 2,
+                "coins": [
+                    5,
+                    2,
+                    2,
+                    1
+                ],
+                "total": 10
+            }
+        ]
+    },
+    "units": {
+        "length": [
+            {
+                "id": "cm",
+                "name": "centimètre",
+                "abbr": "cm"
+            },
+            {
+                "id": "m",
+                "name": "mètre",
+                "abbr": "m"
+            }
+        ],
+        "time": [
+            {
+                "id": "h",
+                "name": "heure",
+                "abbr": "h"
+            },
+            {
+                "id": "min",
+                "name": "minute",
+                "abbr": "min"
+            }
+        ],
+        "money": [
+            {
+                "id": "euro",
+                "name": "euro",
+                "symbol": "€"
+            },
+            {
+                "id": "centime",
+                "name": "centime",
+                "symbol": "c"
+            }
+        ]
+    }
+}

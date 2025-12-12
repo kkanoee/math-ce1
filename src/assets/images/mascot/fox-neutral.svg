@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Fox body -->
+  <ellipse cx="50" cy="65" rx="35" ry="30" fill="#FF7E5F"/>
+  <!-- Fox head -->
+  <circle cx="50" cy="40" r="30" fill="#FF7E5F"/>
+  <!-- Ears -->
+  <polygon points="25,25 35,10 40,30" fill="#FF7E5F"/>
+  <polygon points="75,25 65,10 60,30" fill="#FF7E5F"/>
+  <polygon points="28,23 36,12 38,28" fill="#FFF"/>
+  <polygon points="72,23 64,12 62,28" fill="#FFF"/>
+  <!-- Face markings -->
+  <ellipse cx="50" cy="48" rx="18" ry="15" fill="#FFF"/>
+  <!-- Eyes -->
+  <circle cx="40" cy="38" r="4" fill="#333"/>
+  <circle cx="60" cy="38" r="4" fill="#333"/>
+  <circle cx="41" cy="37" r="1.5" fill="#FFF"/>
+  <circle cx="61" cy="37" r="1.5" fill="#FFF"/>
+  <!-- Nose -->
+  <ellipse cx="50" cy="48" rx="4" ry="3" fill="#333"/>
+  <!-- Mouth -->
+  <path d="M46 52 Q50 56 54 52" stroke="#333" stroke-width="1.5" fill="none"/>
+</svg>

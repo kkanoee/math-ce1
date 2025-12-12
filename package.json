@@ -1,0 +1,61 @@
+{
+    "name": "mathce1",
+    "version": "1.0.0",
+    "description": "Application web éducative pour pratiquer les mathématiques CE1 avec la méthode de Singapour",
+    "type": "module",
+    "main": "src/js/app.js",
+    "scripts": {
+        "start": "npx live-server src --port=3000 --open",
+        "dev": "npx live-server src --port=3000 --open",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage",
+        "lint": "eslint src/js/**/*.js",
+        "lint:fix": "eslint src/js/**/*.js --fix",
+        "build": "echo 'No build step required for vanilla JS'",
+        "predeploy": "echo 'Deploying version from src folder...'",
+        "deploy": "gh-pages -d src",
+        "serve": "npx http-server src -p 8080"
+    },
+    "keywords": [
+        "education",
+        "math",
+        "CE1",
+        "singapore-method",
+        "kids",
+        "learning",
+        "pwa"
+    ],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "eslint": "^8.55.0",
+        "gh-pages": "^6.3.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "live-server": "^1.2.2"
+    },
+    "jest": {
+        "testEnvironment": "jsdom",
+        "moduleFileExtensions": [
+            "js",
+            "json"
+        ],
+        "testMatch": [
+            "**/tests/**/*.test.js"
+        ],
+        "collectCoverageFrom": [
+            "src/js/**/*.js",
+            "!src/js/app.js"
+        ],
+        "coverageDirectory": "coverage",
+        "coverageReporters": [
+            "text",
+            "lcov",
+            "html"
+        ]
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}

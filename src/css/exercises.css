@@ -1,0 +1,733 @@
+/**
+ * MathCE1 - Exercise Styles
+ * Styles specific to exercise pages and CPA phases
+ */
+
+/* ============================================
+   Exercise Page Layout
+   ============================================ */
+
+.exercise-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: var(--space-12);
+}
+
+/* Domain Badge */
+.domain-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: var(--bg-accent);
+    border-radius: var(--radius-full);
+    align-self: center;
+}
+
+.domain-icon {
+    font-size: var(--font-size-xl);
+}
+
+.domain-name {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+}
+
+/* QCM Options */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+    max-width: 400px;
+    margin: var(--space-4) auto;
+}
+
+.option-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background: var(--bg-secondary);
+    border: 3px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    transition: all var(--duration-fast);
+}
+
+.option-btn:hover {
+    background: var(--bg-accent);
+    border-color: var(--color-primary);
+    transform: scale(1.02);
+}
+
+.option-btn.correct {
+    background: var(--color-success-light);
+    border-color: var(--color-success);
+    color: var(--color-success);
+}
+
+.option-btn.incorrect {
+    background: var(--color-error-light);
+    border-color: var(--color-error);
+    color: var(--color-error);
+}
+
+.option-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.exercise-progress {
+    flex: 1;
+}
+
+.exercise-counter {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+/* ============================================
+   Question Display
+   ============================================ */
+
+.question-section {
+    text-align: center;
+    padding: var(--space-6);
+}
+
+.question-text {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    line-height: var(--line-height-loose);
+    margin-bottom: var(--space-4);
+}
+
+.question-equation {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-extra);
+    color: var(--color-primary);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.1em;
+}
+
+.question-audio-btn {
+    margin-top: var(--space-4);
+}
+
+/* Reveal Answer Button */
+.reveal-answer-btn {
+    margin-top: var(--space-4);
+    background: linear-gradient(135deg, #F39C12, #E67E22);
+    color: white;
+    border: none;
+    animation: pulse 2s infinite;
+}
+
+.reveal-answer-btn:hover {
+    background: linear-gradient(135deg, #E67E22, #D35400);
+    transform: scale(1.05);
+}
+
+/* ============================================
+   CPA Phase Indicators
+   ============================================ */
+
+.cpa-phase-indicator {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background: var(--bg-accent);
+    border-radius: var(--radius-lg);
+}
+
+.phase-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-full);
+    background: var(--text-muted);
+    opacity: 0.3;
+    transition: all var(--duration-fast);
+}
+
+.phase-dot.active {
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+.phase-dot.concrete {
+    background: var(--color-concrete);
+}
+
+.phase-dot.pictorial {
+    background: var(--color-pictorial);
+}
+
+.phase-dot.abstract {
+    background: var(--color-abstract);
+}
+
+.phase-label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-secondary);
+    margin-left: var(--space-2);
+}
+
+/* ============================================
+   Manipulables Area (Concrete Phase)
+   ============================================ */
+
+.manipulables-area {
+    min-height: 200px;
+    background: var(--bg-secondary);
+    border: 3px dashed var(--color-concrete);
+    border-radius: var(--radius-xl);
+    padding: var(--space-4);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    justify-content: center;
+    align-items: center;
+}
+
+.manipulable-canvas {
+    width: 100%;
+    max-width: 500px;
+    height: 200px;
+    border-radius: var(--radius-lg);
+    touch-action: none;
+}
+
+/* Cubes */
+.cube {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #3498DB, #2980B9);
+    border: 2px solid #1A5276;
+    border-radius: var(--radius-sm);
+    box-shadow:
+        inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.3),
+        2px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: grab;
+    user-select: none;
+    transition: transform var(--duration-fast);
+}
+
+.cube:hover {
+    transform: scale(1.1);
+}
+
+.cube:active {
+    cursor: grabbing;
+    transform: scale(0.95);
+}
+
+.cube.selected {
+    box-shadow: 0 0 0 3px var(--color-success);
+}
+
+/* Tokens */
+.token {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #F39C12, #E67E22);
+    border: 2px solid #D68910;
+    border-radius: var(--radius-full);
+    box-shadow:
+        inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: transform var(--duration-fast);
+}
+
+.token:hover {
+    transform: scale(1.15);
+}
+
+.token.counted {
+    background: linear-gradient(135deg, #7ED321, #5BA318);
+    border-color: #4A8213;
+}
+
+/* Rods (Cuisenaire) */
+.rod {
+    height: 32px;
+    border-radius: var(--radius-sm);
+    cursor: grab;
+    box-shadow:
+        inset -2px -2px 4px rgba(0, 0, 0, 0.15),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.25);
+}
+
+.rod-1 {
+    width: 32px;
+    background: #FFFFFF;
+    border: 1px solid #CCC;
+}
+
+.rod-2 {
+    width: 64px;
+    background: #E74C3C;
+}
+
+.rod-3 {
+    width: 96px;
+    background: #2ECC71;
+}
+
+.rod-4 {
+    width: 128px;
+    background: #9B59B6;
+}
+
+.rod-5 {
+    width: 160px;
+    background: #F1C40F;
+}
+
+.rod-6 {
+    width: 192px;
+    background: #1ABC9C;
+}
+
+.rod-7 {
+    width: 224px;
+    background: #2C3E50;
+}
+
+.rod-8 {
+    width: 256px;
+    background: #E67E22;
+}
+
+.rod-9 {
+    width: 288px;
+    background: #3498DB;
+}
+
+.rod-10 {
+    width: 320px;
+    background: #E74C3C;
+}
+
+/* ============================================
+   Pictorial Phase (Images/Bar Models)
+   ============================================ */
+
+.pictorial-area {
+    min-height: 150px;
+    padding: var(--space-4);
+    background: var(--bg-secondary);
+    border: 3px solid var(--color-pictorial);
+    border-radius: var(--radius-xl);
+}
+
+.bar-model-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    align-items: center;
+}
+
+/* Bar Model */
+.bar-model {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.bar-row {
+    display: flex;
+    gap: 2px;
+    height: 48px;
+}
+
+.bar-segment {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-inverse);
+    position: relative;
+}
+
+.bar-segment.part-a {
+    background: linear-gradient(135deg, #3498DB, #2980B9);
+}
+
+.bar-segment.part-b {
+    background: linear-gradient(135deg, #E74C3C, #C0392B);
+}
+
+.bar-segment.unknown {
+    background: linear-gradient(135deg, #95A5A6, #7F8C8D);
+}
+
+.bar-segment.unknown::after {
+    content: '?';
+    font-size: var(--font-size-xl);
+}
+
+.bar-label {
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+/* Pictorial icons */
+.pictorial-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    justify-content: center;
+}
+
+.pictorial-icon {
+    font-size: var(--font-size-2xl);
+    opacity: 0.9;
+}
+
+/* ============================================
+   Abstract Phase (Equations)
+   ============================================ */
+
+.abstract-area {
+    text-align: center;
+    padding: var(--space-8);
+    background: var(--bg-secondary);
+    border: 3px solid var(--color-abstract);
+    border-radius: var(--radius-xl);
+}
+
+.equation-display {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-extra);
+    color: var(--text-primary);
+    font-family: 'Courier New', Consolas, monospace;
+    letter-spacing: 0.15em;
+}
+
+.equation-part {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+}
+
+.equation-operator {
+    color: var(--color-primary);
+}
+
+.equation-equals {
+    color: var(--text-muted);
+}
+
+.equation-answer-slot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    height: 60px;
+    background: var(--bg-accent);
+    border: 3px dashed var(--color-primary);
+    border-radius: var(--radius-lg);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-extra);
+}
+
+.equation-answer-slot.filled {
+    background: var(--color-primary-light);
+    border-style: solid;
+    color: var(--text-inverse);
+}
+
+/* ============================================
+   Answer Input Area
+   ============================================ */
+
+.answer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+}
+
+/* Help/Addition Table Button */
+.help-table-btn {
+    margin-top: var(--space-2);
+    background: linear-gradient(135deg, var(--color-info), #3498DB);
+    color: var(--text-inverse);
+    border: none;
+    font-size: var(--font-size-sm);
+}
+
+.help-table-btn:hover {
+    background: linear-gradient(135deg, #3498DB, var(--color-primary));
+    transform: scale(1.02);
+}
+
+.input-mode-toggle {
+    display: flex;
+    gap: var(--space-3);
+    padding: var(--space-2);
+    background: var(--bg-accent);
+    border-radius: var(--radius-full);
+}
+
+.mode-btn {
+    padding: var(--space-2) var(--space-4);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--duration-fast);
+}
+
+.mode-btn.active {
+    background: var(--bg-secondary);
+    color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.voice-input-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.voice-hint {
+    font-size: var(--font-size-base);
+    color: var(--text-muted);
+}
+
+/* ============================================
+   Hint Display
+   ============================================ */
+
+.hint-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    z-index: var(--z-dropdown);
+}
+
+.hint-icon {
+    font-size: 48px;
+}
+
+.hint-text {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.hint-visual {
+    padding: var(--space-4);
+}
+
+/* ============================================
+   Session Summary
+   ============================================ */
+
+.session-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+    text-align: center;
+    padding: var(--space-8);
+}
+
+.summary-mascot {
+    font-size: 80px;
+    animation: bounce 1s ease-in-out;
+}
+
+.summary-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-extra);
+    color: var(--color-primary);
+}
+
+.summary-stats {
+    display: flex;
+    gap: var(--space-8);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.summary-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.summary-stat-icon {
+    font-size: var(--font-size-2xl);
+}
+
+.summary-stat-value {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-extra);
+    color: var(--color-primary);
+}
+
+.summary-stat-label {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+}
+
+.difficulty-badge {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark));
+    color: white;
+    border-radius: var(--radius-full);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-base);
+    margin: var(--space-2) 0;
+}
+
+.summary-actions {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 480px) {
+    .question-equation {
+        font-size: var(--font-size-2xl);
+    }
+
+    .equation-display {
+        font-size: var(--font-size-2xl);
+    }
+
+    .manipulables-area {
+        min-height: 150px;
+    }
+
+    .cube {
+        width: 40px;
+        height: 40px;
+    }
+
+    .token {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* Fix header overlap on mobile */
+    .exercise-header {
+        flex-wrap: wrap;
+        gap: var(--space-2);
+        padding: var(--space-2);
+    }
+
+    .exercise-counter {
+        font-size: var(--font-size-sm);
+    }
+
+    .domain-badge {
+        padding: var(--space-1) var(--space-3);
+        gap: var(--space-1);
+    }
+
+    .domain-badge .domain-icon {
+        font-size: var(--font-size-lg);
+    }
+
+    .domain-badge .domain-name {
+        font-size: var(--font-size-sm);
+    }
+
+    /* CPA indicator smaller on mobile */
+    .cpa-phase-indicator {
+        padding: var(--space-2);
+        gap: var(--space-2);
+    }
+
+    .phase-dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .phase-label {
+        font-size: var(--font-size-xs);
+    }
+
+    /* Question section smaller padding */
+    .question-section {
+        padding: var(--space-4);
+    }
+
+    .question-text {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--space-2);
+    }
+
+    /* Answer section improvements for mobile */
+    .answer-section {
+        gap: var(--space-3);
+    }
+
+    .input-mode-toggle {
+        padding: var(--space-1);
+        gap: var(--space-2);
+    }
+
+    .mode-btn {
+        padding: var(--space-1) var(--space-3);
+        font-size: var(--font-size-sm);
+    }
+
+    /* Exercise page reduce padding to save space */
+    .exercise-page {
+        gap: var(--space-3);
+        padding-bottom: var(--space-6);
+    }
+}

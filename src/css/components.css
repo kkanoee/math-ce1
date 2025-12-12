@@ -1,0 +1,524 @@
+/**
+ * MathCE1 - Component Styles
+ * Styles pour boutons, cartes, inputs adaptés aux enfants
+ */
+
+/* ============================================
+   Buttons
+   ============================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-width: var(--touch-target-min);
+    min-height: var(--touch-target-min);
+    padding: var(--space-3) var(--space-6);
+    font-family: inherit;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--duration-fast) ease;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--color-primary-light);
+    outline-offset: 2px;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Button Variants */
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--text-inverse);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark));
+    color: var(--text-inverse);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, var(--color-secondary-light), var(--color-secondary));
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--color-success), var(--color-success-dark));
+    color: var(--text-inverse);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 3px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-outline:hover {
+    background: var(--color-primary);
+    color: var(--text-inverse);
+}
+
+/* Button Sizes */
+.btn-lg {
+    min-height: var(--touch-target-large);
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--font-size-xl);
+    border-radius: var(--radius-xl);
+}
+
+.btn-xl {
+    min-height: 80px;
+    padding: var(--space-6) var(--space-10);
+    font-size: var(--font-size-2xl);
+    border-radius: var(--radius-xl);
+}
+
+/* Icon Button */
+.btn-icon {
+    width: var(--touch-target-min);
+    height: var(--touch-target-min);
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-full);
+    color: var(--text-primary);
+    font-size: var(--font-size-xl);
+    cursor: pointer;
+    transition: all var(--duration-fast);
+}
+
+.btn-icon:hover {
+    background: var(--bg-accent);
+    color: var(--color-primary);
+}
+
+.btn-icon:active {
+    transform: scale(0.9);
+}
+
+/* ============================================
+   Cards
+   ============================================ */
+
+.card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-6);
+    transition: all var(--duration-fast);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.card-interactive {
+    cursor: pointer;
+}
+
+.card-interactive:active {
+    transform: scale(0.98);
+}
+
+/* Domain Selection Grid */
+.domains-section {
+    margin-top: var(--space-4);
+}
+
+.domains-section .section-title {
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+}
+
+.domains-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--space-4);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+    .domains-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .domains-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Domain Cards */
+.domain-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    min-height: 160px;
+    text-align: center;
+    border: 3px solid transparent;
+}
+
+.domain-card:hover {
+    border-color: var(--domain-color, var(--color-primary));
+}
+
+.domain-card.numeration {
+    --domain-color: var(--color-numeration);
+}
+
+.domain-card.calcul {
+    --domain-color: var(--color-calcul);
+}
+
+.domain-card.geometry {
+    --domain-color: var(--color-geometry);
+}
+
+.domain-card.measures {
+    --domain-color: var(--color-measures);
+}
+
+.domain-card.problems {
+    --domain-color: var(--color-problems);
+}
+
+.domain-icon {
+    font-size: var(--font-size-3xl);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--domain-color, var(--color-primary)), color-mix(in srgb, var(--domain-color, var(--color-primary)), black 20%));
+    border-radius: var(--radius-xl);
+    color: var(--text-inverse);
+}
+
+.domain-name {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+}
+
+/* ============================================
+   Input Fields
+   ============================================ */
+
+.input {
+    width: 100%;
+    min-height: var(--touch-target-min);
+    padding: var(--space-3) var(--space-4);
+    font-family: inherit;
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    border: 3px solid var(--color-primary-light);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: all var(--duration-fast);
+}
+
+.input:focus {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-glow);
+}
+
+.input::placeholder {
+    color: var(--text-muted);
+}
+
+/* ============================================
+   Numeric Keyboard
+   ============================================ */
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 1;
+    min-width: var(--touch-target-large);
+    min-height: var(--touch-target-large);
+    font-family: inherit;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-extra);
+    color: var(--text-primary);
+    background: var(--bg-accent);
+    border: none;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--duration-fast);
+    user-select: none;
+}
+
+.key:hover {
+    background: var(--color-primary-light);
+    color: var(--text-inverse);
+}
+
+.key:active {
+    transform: scale(0.9);
+    background: var(--color-primary);
+}
+
+.key-zero {
+    grid-column: span 2;
+    aspect-ratio: auto;
+}
+
+.key-backspace {
+    background: var(--color-error-light);
+    color: var(--color-error-dark);
+}
+
+.key-backspace:hover {
+    background: var(--color-error);
+    color: var(--text-inverse);
+}
+
+/* ============================================
+   Answer Display
+   ============================================ */
+
+.answer-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+    padding: var(--space-4) var(--space-6);
+    background: var(--bg-secondary);
+    border: 4px solid var(--color-primary);
+    border-radius: var(--radius-xl);
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-extra);
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.answer-display.listening {
+    border-color: var(--color-success);
+    animation: pulse-border 1.5s ease-in-out infinite;
+}
+
+.answer-display.correct {
+    border-color: var(--color-success);
+    background: rgba(126, 211, 33, 0.1);
+    color: var(--color-success-dark);
+}
+
+.answer-display.incorrect {
+    border-color: var(--color-error);
+    background: rgba(255, 107, 107, 0.1);
+    color: var(--color-error-dark);
+}
+
+.answer-placeholder {
+    color: var(--text-muted);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-normal);
+}
+
+/* ============================================
+   Microphone Button
+   ============================================ */
+
+.mic-button {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    border: none;
+    color: var(--text-inverse);
+    font-size: 36px;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--duration-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mic-button:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow);
+}
+
+.mic-button:active {
+    transform: scale(0.95);
+}
+
+.mic-button.listening {
+    background: linear-gradient(135deg, var(--color-success), var(--color-success-dark));
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.mic-button.disabled {
+    background: var(--text-muted);
+    cursor: not-allowed;
+}
+
+/* ============================================
+   Progress Components
+   ============================================ */
+
+.progress-bar {
+    width: 100%;
+    height: 16px;
+    background: var(--bg-accent);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-success));
+    border-radius: var(--radius-full);
+    transition: width var(--duration-slow) ease-out;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--space-2);
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+}
+
+/* CPA Level Indicator */
+.cpa-indicator {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    padding: var(--space-4);
+}
+
+.cpa-level {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    opacity: 0.5;
+    transition: opacity var(--duration-fast);
+}
+
+.cpa-level.active {
+    opacity: 1;
+}
+
+.cpa-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    color: var(--text-inverse);
+}
+
+.cpa-level.concrete .cpa-icon {
+    background: var(--color-concrete);
+}
+
+.cpa-level.pictorial .cpa-icon {
+    background: var(--color-pictorial);
+}
+
+.cpa-level.abstract .cpa-icon {
+    background: var(--color-abstract);
+}
+
+.cpa-label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   Badge
+   ============================================ */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-1) var(--space-3);
+    background: var(--color-secondary);
+    color: var(--text-inverse);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    border-radius: var(--radius-full);
+}
+
+.badge-success {
+    background: var(--color-success);
+}
+
+.badge-new {
+    background: var(--color-error);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* ============================================
+   Animations for Components
+   ============================================ */
+
+@keyframes pulse-border {
+
+    0%,
+    100% {
+        border-color: var(--color-success);
+    }
+
+    50% {
+        border-color: var(--color-success-light);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(74, 144, 217, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 15px rgba(74, 144, 217, 0);
+    }
+}
