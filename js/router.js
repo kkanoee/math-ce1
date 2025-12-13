@@ -25,6 +25,7 @@ export class Router {
     init() {
         this.container = document.getElementById('main-content');
         this.backButton = document.getElementById('btn-back');
+        this.profileButton = document.getElementById('btn-profile');
 
         if (!this.container) {
             console.error('Router: main-content container not found');
@@ -78,6 +79,9 @@ export class Router {
 
             // Update back button visibility
             this.updateBackButton();
+
+            // Update profile button visibility
+            this.updateProfileButtonVisibility(routeName || 'home');
 
             // Add page transition animation
             this.container.classList.add('page-enter');
@@ -148,6 +152,20 @@ export class Router {
         if (this.backButton) {
             const isHome = window.location.hash === '' || window.location.hash === '#home';
             this.backButton.hidden = isHome;
+        }
+    }
+
+    /**
+     * Update profile button visibility
+     * Shows only on home page
+     * @param {string} routeName 
+     */
+    updateProfileButtonVisibility(routeName) {
+        if (this.profileButton) {
+            const isHome = routeName === 'home' || routeName === '';
+            // If isHome is true, hidden should be false (visible)
+            // If isHome is false, hidden should be true (hidden)
+            this.profileButton.parentElement.hidden = !isHome;
         }
     }
 

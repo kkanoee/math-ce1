@@ -199,6 +199,19 @@ body {
   color: var(--color-primary);
   text-align: center;
   cursor: pointer;
+  padding: var(--space-2) var(--space-4);
+  border: 2px solid var(--color-primary-light);
+  border-radius: var(--radius-lg);
+  background-color: transparent;
+  transition: all var(--duration-fast);
+}
+
+.app-title:hover {
+  background-color: var(--color-primary-light);
+  color: var(--text-inverse);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
 }
 
 .app-main {
