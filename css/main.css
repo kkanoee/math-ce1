@@ -193,6 +193,11 @@ body {
   white-space: nowrap;
 }
 
+/* Hide profile button on non-home pages */
+body:not([data-page="home"]) .header-profile-btn {
+  display: none !important;
+}
+
 .app-title {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-extra);

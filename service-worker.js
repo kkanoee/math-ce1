@@ -3,9 +3,9 @@
  * Cache-first strategy for offline support
  */
 
-const CACHE_NAME = 'mathce1-v1';
-const STATIC_CACHE = 'mathce1-static-v1';
-const DYNAMIC_CACHE = 'mathce1-dynamic-v1';
+const CACHE_NAME = 'mathce1-v2';
+const STATIC_CACHE = 'mathce1-static-v2';
+const DYNAMIC_CACHE = 'mathce1-dynamic-v2';
 
 // Files to cache on install (shell)
 const STATIC_ASSETS = [
