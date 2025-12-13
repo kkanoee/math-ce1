@@ -18,7 +18,121 @@ export class HomePage {
     this.params = params || []; // params from router
   }
 
-  // ... render ...
+  /**
+   * Render the home page
+   * @returns {string} HTML content
+   */
+  render() {
+    const currentChild = this.app?.state?.get('currentChild');
+
+    return `
+      <div class="home-page slide-up">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+          <div class="welcome-avatar bounce-in" id="home-avatar-container">
+            <span class="mascot-emoji">🦊</span>
+          </div>
+          <h1 class="welcome-title">
+            ${currentChild ? `Bonjour ${currentChild.name} !` : 'Bienvenue !'}
+          </h1>
+          <p class="welcome-subtitle">
+            Prêt pour une aventure mathématique ?
+          </p>
+          ${currentChild ? `
+            <button class="btn btn-sm btn-outline avatar-shop-link" id="avatar-shop-link">
+              ✨ Ma boutique
+            </button>
+          ` : ''}
+        </section>
+
+        <!-- Profile Section (if no child selected) -->
+        ${!currentChild ? this.renderProfileSelection() : ''}
+
+        <!-- Domain Selection -->
+        ${currentChild ? this.renderDomainSelection() : ''}
+
+        <!-- Quick Stats -->
+        ${currentChild ? this.renderQuickStats(currentChild) : ''}
+      </div>
+    `;
+  }
+
+  /**
+   * Render profile selection for first time users
+   */
+  renderProfileSelection() {
+    return `
+      <section class="profile-section card">
+        <h2 class="section-title">Qui es-tu ?</h2>
+        <div class="profile-form">
+          <input
+            type="text"
+            id="child-name-input"
+            class="input"
+            placeholder="Ton prénom"
+            maxlength="${CONFIG.LIMITS.MAX_NAME_LENGTH}"
+            autocomplete="off"
+          />
+          <button class="btn btn-primary btn-lg" id="start-btn">
+            <span>C'est parti !</span>
+            <span class="btn-icon">🚀</span>
+          </button>
+        </div>
+      </section>
+    `;
+  }
+
+  /**
+   * Render domain selection cards
+   */
+  renderDomainSelection() {
+    const domains = Object.values(CONFIG.DOMAINS);
+
+    return `
+      <section class="domains-section">
+        <h2 class="section-title">Que veux-tu apprendre ?</h2>
+        <div class="domains-grid">
+          ${domains.map(domain => `
+            <button
+              class="card domain-card card-interactive ${domain.id}"
+              data-domain="${domain.id}"
+              style="--domain-color: ${domain.color}"
+            >
+              <div class="domain-icon">${domain.icon}</div>
+              <span class="domain-name">${domain.name}</span>
+            </button>
+          `).join('')}
+        </div>
+      </section>
+    `;
+  }
+
+  /**
+   * Render quick stats for current child
+   */
+  renderQuickStats(child) {
+    return `
+      <section class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-icon">⭐</span>
+            <span class="stat-value">${child.stars || 0}</span>
+            <span class="stat-label">Étoiles</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🏆</span>
+            <span class="stat-value" id="badge-count">0</span>
+            <span class="stat-label">Badges</span>
+          </div>
+          <div class="stat-item clickable" id="progress-link">
+            <span class="stat-icon">📊</span>
+            <span class="stat-value">Voir</span>
+            <span class="stat-label">Progrès</span>
+          </div>
+        </div>
+      </section>
+    `;
+  }
 
   /**
    * Initialize page after render
