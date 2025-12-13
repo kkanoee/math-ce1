@@ -16,6 +16,11 @@
     padding-bottom: var(--space-12);
 }
 
+/* Force hide profile button when on exercise page (redundant safety) */
+body[data-page="exercise"] .header-profile-btn {
+    display: none !important;
+}
+
 /* Domain Badge */
 .domain-badge {
     display: flex;

@@ -48,6 +48,9 @@ export class Router {
 
         console.log(`🔀 Navigating to: ${routeName}`, params);
 
+        // Update body attribute for CSS styling
+        document.body.dataset.page = routeName || 'home';
+
         const PageComponent = this.routes[routeName];
 
         if (!PageComponent) {
@@ -151,7 +154,11 @@ export class Router {
     updateBackButton() {
         if (this.backButton) {
             const isHome = window.location.hash === '' || window.location.hash === '#home';
-            this.backButton.hidden = isHome;
+            if (isHome) {
+                this.backButton.style.setProperty('display', 'none', 'important');
+            } else {
+                this.backButton.style.display = '';
+            }
         }
     }
 
@@ -163,9 +170,14 @@ export class Router {
     updateProfileButtonVisibility(routeName) {
         if (this.profileButton) {
             const isHome = routeName === 'home' || routeName === '';
-            // If isHome is true, hidden should be false (visible)
-            // If isHome is false, hidden should be true (hidden)
-            this.profileButton.parentElement.hidden = !isHome;
+
+            if (isHome) {
+                this.profileButton.style.display = '';
+                // Also remove hidden class just in case
+                this.profileButton.classList.remove('hidden');
+            } else {
+                this.profileButton.style.setProperty('display', 'none', 'important');
+            }
         }
     }
 
